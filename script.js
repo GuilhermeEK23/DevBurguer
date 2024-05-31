@@ -125,7 +125,7 @@ addressInput.addEventListener("input", function(event){
 //Finalizar pedido
 checkoutBtn.addEventListener("click", function(){
     const isOpen = checkRestaurantOpen()
-    if(isOpen){
+    if(!isOpen){
         Toastify({
             text: "Ops, o restaurante está fechado no momento!",
             duration: 3000,
@@ -170,7 +170,7 @@ checkoutBtn.addEventListener("click", function(){
 function checkRestaurantOpen(){
     const data = new Date()
     const hora = data.getHours()
-    return hora >= 18 && hora <= 22
+    return hora >= 18 && hora <= 24
 }
 
 const spanItem = document.getElementById("date-span")
